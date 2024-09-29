@@ -6,7 +6,7 @@
 
 **FSM state diagram:** https://urjc-my.sharepoint.com/:i:/g/personal/a_galea_2022_alumnos_urjc_es/EQsDVcf6nKVNu4jCtFLJ99cBmrUZzL2etKEK3WI-PCxabA?e=GNHmM2
 
-**Execution video:**
+**Execution video:** https://urjc-my.sharepoint.com/:v:/g/personal/a_galea_2022_alumnos_urjc_es/ESQ0Z-PZGQREt7hPXXMuixIB6p1fMlhyOOHcUDrQJW8sKg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=7Mn3VZ
 
 ## Algorithm details
 
@@ -32,12 +32,12 @@ While developing the algorithm I found some difficulties:
   
   - The robot being unable to get out of rooms with hard access, I try to solve it by adding angular speed to the movement while following the wall so that it makes easier for the robot to rotate himself the correct way to make his way out of the room.
   
-  - The robot not convering enough sapce of the house. To solve this I try to find a solution that combines some random elements with some fixed elements, such as having established turn directions depending on the bumper zone hit but turning during a random period of time (in the normal case).
+  - The robot not convering enough sapce of the house. To solve this I try to find a solution that combines some random elements with some established elements, such as having established turn directions depending on the bumper zone hit but turning during a random period of time (in the normal case).
 
   - Not being able to make the robot turn a concrete angle as long as the robot turns must be calculated by substraction of times. To solve this I decided to get the laser data only of three concrete angles and to make the turns based more on the bumper that on the laser sensor. Using the laser sensor only to estimate the freedom of the area around the robot.
 
 ## Tests
-I simulate the algorithm a lot of times while triying to improve it and I realised that:
-  - Adding angular speed to get out of rooms improved a lot the time needed by the robot to get out of the room.
+I simulated the algorithm a lot of times while triying to improve it and I realised that:
+  - Adding angular speed to get out of rooms decreased a lot the time needed by the robot to get out of the room.
 
-  - Following the wall and having fixed turning directions depending on the bumper zone hit increased a lot the explored area of the house.
+  - Following the wall and having established turning directions depending on the bumper zone hit increased a lot the explored area of the house.
