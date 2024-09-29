@@ -8,8 +8,7 @@
 
 **Execution video:** https://urjc-my.sharepoint.com/:v:/g/personal/a_galea_2022_alumnos_urjc_es/ESQ0Z-PZGQREt7hPXXMuixIB6p1fMlhyOOHcUDrQJW8sKg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=7Mn3VZ
 
-## Algorithm details
-
+## Algorithm details:
 The algorithm has the following states: *SPIRAL_MOTION*, *MOVING_BACKWARD*, *TURNING* and *MOVING_FORWARD*. It uses the information received from the laser and bumper sensors and decides how to move and turn in each situtation.
 
 ### Key states:
@@ -25,7 +24,7 @@ The algorithm has the following states: *SPIRAL_MOTION*, *MOVING_BACKWARD*, *TUR
   
   - **MOVING_FORWARD:** After the turn, the robot moves forward with a constant linear speed until the bumper is hit. Furthermore, if the robot detects that the turn direction has been the same more times than the maximum established, it adds a constant angular speed until another turn direction is choosen.
 
-## Difficulties
+## Difficulties:
 
 While developing the algorithm I found some difficulties:
   - The robot getting stuck in certain places of the map. I try to solve it by including conditions that check if the robot has been a lot of time close to the wall.
@@ -36,7 +35,7 @@ While developing the algorithm I found some difficulties:
 
   - Not being able to make the robot turn a concrete angle as long as the robot turns must be calculated by substraction of times. To solve this I decided to get the laser data only of three concrete angles and to make the turns based more on the bumper that on the laser sensor. Using the laser sensor only to estimate the freedom of the area around the robot.
 
-## Tests
+## Tests:
 I simulated the algorithm a lot of times while triying to improve it and I realised that:
   - Adding angular speed to get out of rooms decreased a lot the time needed by the robot to get out of the room.
 
