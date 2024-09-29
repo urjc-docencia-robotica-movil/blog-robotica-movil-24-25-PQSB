@@ -32,7 +32,12 @@ While developing the algorithm I found some difficulties:
   
   - The robot being unable to get out of rooms with hard access, I try to solve it by adding angular speed to the movement while following the wall so that it makes easier for the robot to rotate himself the correct way to make his way out of the room.
   
-  - The robot not convering enough sapce of the house. To solve this I try to find a solution that combines some random elements with some fixed elements, such as having established turn directions depending on the bumper zone hit but turning during a random period of time.
+  - The robot not convering enough sapce of the house. To solve this I try to find a solution that combines some random elements with some fixed elements, such as having established turn directions depending on the bumper zone hit but turning during a random period of time (in the normal case).
 
   - Not being able to make the robot turn a concrete angle as long as the robot turns must be calculated by substraction of times. To solve this I decided to get the laser data only of three concrete angles and to make the turns based more on the bumper that on the laser sensor. Using the laser sensor only to estimate the freedom of the area around the robot.
 
+## Tests
+I simulate the algorithm a lot of times while triying to improve it and I realised that:
+  - Adding angular speed to get out of rooms improved a lot the time needed by the robot to get out of the room.
+
+  - Following the wall and having fixed turning directions depending on the bumper zone hit increased a lot the explored area of the house.
