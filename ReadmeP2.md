@@ -14,9 +14,9 @@ The algorithm uses a PID to adjust the angular speed of the car, the linear spee
 
 To adjust the PID constants, I first set the KP value and then I add KD and KI by trying a lot of different values until the car beahved really close to the desired way. Increasing of decreasing those constant according to the behavior I observed in each case.
 
-To reset the value of the integral cummulative part I decided to 
+To reset the value of the integral cummulative part I decided to have an error accumulator whose maximum value is established, so that the When the accumulated error is higher, it is reset to zero value. I spent some time adjusting this value, until I check it worked properly.
 
-#### Key states:
+### Obtained results:
 
 
 ## Ackerman Model:
