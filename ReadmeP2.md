@@ -56,7 +56,7 @@ I thought about implementing a more complex controller for the linear speed by c
 While developing the algorithm I found some difficulties:
   - When executing the program in the simulator sometimes the same PID values obtained different results, probably due to the laptop.
   
-  - The error in pixels i very big.
+  - The error in pixels is very big.
 
   - The ackerman model is really hard to control at high linear speeds.
 
