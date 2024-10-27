@@ -12,6 +12,12 @@ The goal is to program a local navigation algorithm based on "Virtual Force Fiel
 To calculate the attractive force, first I get the **attractive vector** whose coordinates are the current target coordinates relative to the F1. Once I have the **attractive vector** I obtain the **attractive force** by regulating the module of the attractive vector to a maximum value of 3, because if not, the attractive force will make the repulsive force be insignificant.
 
 #### Repulsive Force:
+Repulsive force is calculated as the *weighted* sum of all repulsive vectors.
+To calculate each repulsive vector, the first thing to do is to transform the information of every single measure of the laser into a vector.
+Once the vector is calculated in polar coordiantes, I apply a kind of *filter* through which I increase or decrease the importance of that vector taking into account the **how far** is it from F1 and if it is located in **the front or on the sides**.
+The final repulsive vector is calculated as the sum of all repulsive vectors in *cartesian coordinates*.
+
+
 
 
 #### Final/Resultant Force:
