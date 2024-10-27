@@ -14,8 +14,10 @@ To calculate the attractive force, first I get the **attractive vector** whose c
 #### Repulsive Force:
 Repulsive force is calculated as the *weighted* sum of all repulsive vectors.
 To calculate each repulsive vector, the first thing to do is to transform the information of every single measure of the laser into a vector.
-Once the vector is calculated in polar coordiantes, I apply a kind of *filter* through which I increase or decrease the importance of that vector taking into account the **how far** is it from F1 and if it is located in **the front or on the sides**.
-The final repulsive vector is calculated as the sum of all repulsive vectors in *cartesian coordinates*.
+Once the vector is calculated in polar coordiantes, I apply a kind of *filter* through which I increase or decrease the importance of that vector taking into account **how far** is it from F1 and if it is located in **the front or on the sides**.
+The final repulsive vector is calculated as the sum of all repulsive vectors in *cartesian coordinates*. I first thought about calculating as the mean of all repulsive vector however, that system that system was not capable of avoiding obstacles in front of it, so I realize that if I wanted the F1 to be reactive I needed to calculate a more reliable repulsive vector.
+
+
 
 
 
