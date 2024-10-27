@@ -1,5 +1,5 @@
 # P3 - Obstacle Avoidance
-**Date:** 13/10/2024
+**Date:** 27/10/2024
 
 **Author:** Andrés Galea Torrecilla
 
@@ -29,11 +29,11 @@ The reach the targets and avoid obstacles with a lap time of 1 minute and 10 s a
 ## Difficulties:
 
 While developing the algorithm I found some difficulties:
-  - 
+  - Obtain angular and linear speeds from a final force vector.
   
-  - 
+  - Finding the correct way to calculate the weight of each laser measure.
 
-  - 
+  - Identifying when it was better to use polar coordinates and when cartesian coordinates, specially when trying to find a way of calculating linear and angular speeds.
 
 ## Execution video:
 https://urjc-my.sharepoint.com/:v:/g/personal/a_galea_2022_alumnos_urjc_es/ESdwrjtiBuVAthbL4VyLQW4BhT3hlkHhW4PI272gK0U2Dg?e=Cj1UXQ
