@@ -4,7 +4,7 @@
 **Author:** Andrés Galea Torrecilla
 
 ## Algorithm details:
-The goal is to program a local navigation algorithm based on "Virtual Force Field" (VFF) for a formula 1 car that advances through the center of the circuit avoiding any obstacle that is along the way.
+The goal is to program a global navigation algorithm based on **"Gradient Path Planning" (GPP)** for a taxi in a city. Once the target has been selected the taxi must reach it by the *shortest* route.
 
 ### Wave Front Algorithm:
 To calculate the attractive force, first I get the **attractive vector** whose coordinates are the current target coordinates relative to the F1. Once I have the **attractive vector** I obtain the **attractive force** by regulating the module of the attractive vector to an established maximum value, because if not, the attractive force will make the repulsive force be insignificant.
