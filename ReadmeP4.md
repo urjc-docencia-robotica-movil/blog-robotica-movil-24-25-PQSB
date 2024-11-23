@@ -9,7 +9,7 @@ The goal is to program a global navigation algorithm based on **"Gradient Path P
 ### Wave Front Algorithm:
 
 There is an inicialization part where I define all the needed elements before starting to expand:
-  - A **cost map** that will store the cost of every singe expanded cell and an obstacle array. The default value of every position of the array is *float(inf)* therefore obstacles will have a *float(inf)* cost.
+  - A **cost map** that will store the cost of every singe expanded cell and an obstacle array. The default value of every position of the array is *float(inf) therefore the default weight of every cell is *float(inf)*.
   
   - An **obstacle array** that will store the coordinates of every detected obstacle.
 
