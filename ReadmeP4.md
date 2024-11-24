@@ -34,9 +34,7 @@ After that, while the frontier is not empty, or the position of the car (plus th
 
 Once the **cost map** is completed and all the detected obstacles have been added to the **obstacle array** I create an **obstacle map** which will store an extra cost assigned to the cells near the obstacles stored in the **obstacle array** so that the taxi does not navigate too close to the obstacles.
 
-This proccess follows the next structure, for every obstacle in **obstacle array** a square region centered on its coordinates is ran through. An initial extra weight is calculated and adjusted depending on the relative position. In each neighboring cell, if certain conditions are met (within the boundaries of the map, it is not an obstacle, it has not been modified and it has a non-zero cost), the extra weight is assigned.
-
-For every obstacle in **obstacle array** I assign a cost to the cells around the obstacle in a square shape. Depending on the 
+This proccess follows the next structure, for every obstacle in **obstacle array** assing the extra cost to all the cells that forms an aXa square around the obstacle. The cost of each cell is determined by the layer the cell is located at. The closer the layer is to the obstacle the grater the cost of the cell. The dimensions of the square (number of layers) are previously established and before assigning the cost to the cell, some conditions are checked (the cell is not the obstacle, that cell had not been expanded before and that cell is not the target).
 
 ### Gradient navigation:
 
