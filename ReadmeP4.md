@@ -59,6 +59,6 @@ The taxi is able to navigate through the map to reach the chosen target. If the 
 
   - Find the dimensions of the square to expand around the taxi to get the cell with less cost.
 
-  - Find a way to calculate angular and linear speeds so that the car moves in a safe way in all cases.
+  - Find a way to calculate angular and linear speeds so that the car moves securely.
 
 ## Execution video:
