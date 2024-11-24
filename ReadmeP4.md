@@ -32,16 +32,18 @@ After that, while the frontier is not empty, or the position of the car (plus th
 
 ### Obstacle expansion:
 
-Once the **cost map** is completed and all the detected obstacles have been added to the **obstacle array** I create an **obstacle map** which will store all obstacles plus an extra expansion to prevent the car from driving too close to the walls.
-This expansion is made the following way:
-  - For every obstacle in **obstacle array** I assign a cost to the cells around the obstacle that de
+Once the **cost map** is completed and all the detected obstacles have been added to the **obstacle array** I create an **obstacle map** which will store an extra cost assigned to the cells near the obstacles stored in the **obstacle array** so that the taxi does not navigate too close to the obstacles.
+
+This proccess follows the next structure, for every obstacle in **obstacle array** a square region centered on its coordinates is ran through. An initial extra weight is calculated and adjusted depending on the relative position. In each neighboring cell, if certain conditions are met (within the boundaries of the map, it is not an obstacle, it has not been modified and it has a non-zero cost), the extra weight is assigned.
+
+For every obstacle in **obstacle array** I assign a cost to the cells around the obstacle in a square shape. Depending on the 
 
 ### Gradient navigation:
 
 Once the **cost map** and the **obstacle map** are calculated the **final cost map** is obtained as the sum of both maps, so that, the cost of the cells near to the obstacles is incremented. Therefore, the **final cost map** will be the one used by the taxi to navigate.
 The navigation part follows the next structure:
 - Get the position of the car relative to the map.
-- Expand a aXa square around the taxi and get the coordinates relative to the map of the cell with less cost.
+- Run through all the cells that form an aXa square around the taxi and get the coordinates relative to the map of the cell with less cost.
 - Once the cell with less cost is founded, check if the target is reached (with some tolerance) and end navigation in case it is.
 - Convert cell coordinates with minimum cost to world coordinates relative to the taxi and calculate speeds the following way:
   - **angular_speed:** is calculated as the tan of these coordinates.
