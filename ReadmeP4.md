@@ -34,7 +34,7 @@ After that, while the frontier is not empty, or the position of the car (plus th
 
 Once the **cost map** is completed and all the detected obstacles have been added to the **obstacle array** I create an **obstacle map** which will store all obstacles plus an extra expansion to prevent the car from driving too close to the walls.
 This expansion is made the following way:
-  - For every obstacle in **obstacle array** I assign a cost to the cells around the obstacle.
+  - For every obstacle in **obstacle array** I assign a cost to the cells around the obstacle that de
 
 ### Gradient navigation:
 
@@ -42,7 +42,7 @@ Once the **cost map** and the **obstacle map** are calculated the **final cost m
 The navigation part follows the next structure:
 - Get the position of the car relative to the map.
 - Expand a aXa square around the taxi and get the coordinates relative to the map of the cell with less cost.
-- Once the cell with less cost is founded, check if the target is reached and end navigation in case it is.
+- Once the cell with less cost is founded, check if the target is reached (with some tolerance) and end navigation in case it is.
 - Convert cell coordinates with minimum cost to world coordinates relative to the taxi and calculate speeds the following way:
   - **angular_speed:** is calculated as the tan of these coordinates.
 
@@ -54,7 +54,7 @@ The taxi is able to navigate through the map to reach the chosen target. If the 
 ## Difficulties: 
   - 
   
-  - Find an appropiate **extra cost** for the cells close to obstacles to be a relevant but not to prevent the taxi from being unable to pass through some streets.
+  - Find an appropiate **extra cost** for the cells near obstacles so that it is relevant but does not prevent the taxi from being able to pass through some streets.
 
   - 
 
