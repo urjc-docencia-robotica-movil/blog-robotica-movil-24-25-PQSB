@@ -37,6 +37,7 @@ This expansion is made the following way:
   - For every obstacle in **obstacle array** I assign a cost to the cells around the obstacle.
 
 ### Gradient navigation:
+
 Once the **cost map** and the **obstacle map** are calculated the **final cost map** is obtained as the sum of both maps, so that, the cost of the cells close to the obstacles is incremented. Therefore, the **final cost map** will be the one used by the taxi to navigate.
 The navigation part follows the next structure:
 - Get the position of the car relative to the map.
