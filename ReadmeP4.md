@@ -37,11 +37,15 @@ This expansion is made the following way:
   - For every obstacle in **obstacle array** I assign a cost to the cells around the obstacle.
 
 ### Gradient navigation:
+Once the **cost map** and the **obstacle map** are calculated the **final cost map** is obtained as the sum of both maps, so that, the cost of the cells close to the obstacles is incremented. Therefore, the **final cost map** will be the one used by the taxi to navigate.
+The navigation part follows the next structure:
+- Get the position of the car relative to the map.
+- Expand a aXa square around the taxi and get the coordinates relative to the map of the cell with less cost.
+- Once the cell with less cost is founded, check if the target is reached and end navigation in case it is.
+- Convert cell coordinates with minimum cost to world coordinates relative to the taxi and calculate speeds the following way:
+  - **angular_speed:** is calculated as the tan of these coordinates.
 
-I used the force obtained from there to calculate linear and angular speeds the following way:
-  - **linear_speed:**
-  
-  - **angular_speed:**
+  - **linear_speed:** is calculated as the **MAX SPEED** constant minus the ponderated value of the **angular speed** so that the greater the angle to turn the smaller linear speed.
 
 ### Obtained results:
 The taxi is able to navigate through the map to reach the chosen target. If the target is modified during the taxi navigation to the target, the taxi stops, create a new **final cost map** and starts to navigate to the new target. The **final cost map** creating proccess cannot be interrupted.
