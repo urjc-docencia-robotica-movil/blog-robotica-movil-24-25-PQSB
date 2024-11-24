@@ -23,7 +23,7 @@ Once all these elements have been defined, I get the coordinates of the current 
 
 After that, while the frontier is not empty, or the position of the car (plus the extra expansion) has not been reached the following procedure is executed:
 
-- Get one node from the frontier
+- Get one node from the frontier.
 - Check if that node has already been expanded.
 - Check if the position of the car (plus the extra expansion) has been reached.
 - Check if the node is an obstacle and add it to the **obstacle array** in case it is.
