@@ -33,8 +33,7 @@ After that, while the frontier is not empty, or the position of the car (plus th
 ### Obstacle expansion:
 Once the **cost map** is completed and all the detected obstacles have been added to the **obstacle array** I create an **obstacle map** which will store all obstacles plus an extra expansion to prevent the car from driving too close to the walls.
 This expansion is made the following way:
-  - For every obstacle in **obstacle array** I 
-
+  - For every obstacle in **obstacle array** I assign a cost to the cells around the obstacle.
 
 ### Gradient navigation:
 
@@ -44,7 +43,7 @@ I used the force obtained from there to calculate linear and angular speeds the 
   - **angular_speed:**
 
 ### Obtained results:
-
+The taxi is able to navigate through the map to reach the chosen target. If the target is modified during the taxi navigation to the target, the taxi stops, create a new **final cost map** and starts to navigate to the new target. The **final cost map** creating proccess cannot be interrupted.
 
 ## Difficulties: 
   - 
