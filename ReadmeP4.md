@@ -31,6 +31,7 @@ After that, while the frontier is not empty, or the position of the car (plus th
 - Normalize and show the current **cost map** to see how the expansion evolves.
 
 ### Obstacle expansion:
+
 Once the **cost map** is completed and all the detected obstacles have been added to the **obstacle array** I create an **obstacle map** which will store all obstacles plus an extra expansion to prevent the car from driving too close to the walls.
 This expansion is made the following way:
   - For every obstacle in **obstacle array** I assign a cost to the cells around the obstacle.
@@ -48,7 +49,7 @@ The taxi is able to navigate through the map to reach the chosen target. If the 
 ## Difficulties: 
   - 
   
-  - 
+  - Find an appropiate **extra cost** for the cells close to obstacles to be a relevant but not to prevent the taxi from being unable to pass through some streets.
 
   - 
 
