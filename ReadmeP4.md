@@ -36,7 +36,7 @@ Once the **cost map** is completed and all the detected obstacles have been adde
 
 This proccess follows the next structure, for every obstacle in **obstacle array** assing an extra cost to all the cells that forms an aXa square around the obstacle. The cost of each cell is determined by the layer the cell is located at. The closer the layer is to the obstacle the grater the cost of the cell. The dimensions of the square (number of layers) have been previously established.
 
-Before assigning the cost to the cell, some conditions are checked: *the cell is not an obstacle, that cell had not been expanded before and that cell is not the target*.
+Before assigning the cost to the cell, some conditions are checked: *the cell is not an obstacle and that cell is not the target*.
 
 ### Gradient navigation:
 
