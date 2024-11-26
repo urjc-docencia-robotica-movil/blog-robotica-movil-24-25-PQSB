@@ -46,7 +46,7 @@ The navigation part follows the next structure:
 - Run through all the cells that form an aXa square around the taxi and get the coordinates relative to the map of the cell with less cost. The dimensions of the square (number of layers) have been previously established.
 - Once the cell with less cost is founded, check if the target is reached (with some tolerance) and end navigation in case it is.
 - Convert cell coordinates with minimum cost to world coordinates relative to the taxi and calculate speeds the following way:
-  - **angular_speed:** is calculated as the tan of these coordinates.
+  - **angular_speed:** is calculated as the atan2 of these coordinates.
 
   - **linear_speed:** is calculated as the **MAX SPEED** constant minus the ponderated value of the **angular speed** so that the greater the angle to turn the smaller linear speed.
 
