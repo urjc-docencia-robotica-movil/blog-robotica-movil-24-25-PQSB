@@ -48,7 +48,7 @@ The navigation part follows the next structure:
 - Convert cell coordinates with minimum cost to world coordinates relative to the taxi and calculate speeds the following way:
   - **angular_speed:** is calculated as the atan2 of these coordinates.
 
-  - **linear_speed:** is calculated as the **MAX SPEED** constant minus the ponderated value of the **angular speed** so that the greater the angle to turn the smaller linear speed.
+  - **linear_speed:** is calculated as the **MAX SPEED** constant minus the **angular speed** icreased by a *LIMIT FACTOR* so that the greater the angle to turn the smaller linear speed.
 
 ### Obtained results:
 The taxi is able to navigate through the map to reach the chosen target. If the target is modified during the taxi navigation to the target, the taxi stops, create a new **final cost map** and starts to navigate to the new target. The **final cost map** creating proccess cannot be interrupted.
