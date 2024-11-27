@@ -1,5 +1,5 @@
 # P4 - Global Navigation
-**Date:** 26/11/2024
+**Date:** 27/11/2024
 
 **Author:** Andrés Galea Torrecilla
 
@@ -61,6 +61,9 @@ The taxi is able to navigate through the map to reach the chosen target. If the 
 
   - Find a way to calculate angular and linear speeds so that the car moves securely.
 
-  - When the target is behind the initial position of the taxi there are some cases in which when it starts to turn around it collides with the wall. To solve it I have made that for **big turns (high angular speed)** the taxi does not have linear speed, and for almost all the targets I have tested it solves the problem. I did this by increasing the *LIMIT FACTOR*. I leave commented the previous *LIMIT FACTOR* value with which the taxi had linear speed also in big turns.
+  - When the target is behind the initial position of the taxi there are some cases in which when it starts to turn around it collides with the wall. I tried to solve it by making **zero or near-zero** linear speed at large turns **big turns (high angular speed)**. I did this by increasing the *LIMIT FACTOR*. I leave commented the previous *LIMIT FACTOR* value with which the taxi had linear speed also in big turns.
 
 ## Execution video:
+- **New limit factor:** https://urjc-my.sharepoint.com/:v:/g/personal/a_galea_2022_alumnos_urjc_es/ETxVbG6miFFGoaOtDd_4u3kBxhHuh_EIxs9Loxpg3wlKLA?e=vkYW7J
+
+- **Old limit factor (with some linear speed in big turns):** https://urjc-my.sharepoint.com/:v:/g/personal/a_galea_2022_alumnos_urjc_es/Ea0hwogIJqRAuangpCUhalwB_NcCabWerUEGQEBdC_Tbug?e=oDcyRA
