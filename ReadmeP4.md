@@ -34,7 +34,7 @@ After that, while the frontier is not empty, or the position of the car (plus th
 
 Once the **cost map** is completed and all the detected obstacles have been added to the **obstacle array** I create an **obstacle map** which will store an extra cost assigned to the cells near the obstacles stored in the **obstacle array** so that the taxi does not navigate too close to the obstacles or collides with them.
 
-This proccess follows the next structure, for every obstacle in **obstacle array** assing an extra cost to all the cells that forms an aXa square around the obstacle. The cost of each cell is determined by the layer the cell is located at. The closer the layer is to the obstacle the grater the cost of the cell. The dimensions of the square (number of layers) have been previously established.
+This proccess follows the next structure, for every obstacle in **obstacle array** assing an extra cost to all the cells that forms an -aXa square around the obstacle. The cost of each cell is determined by the layer the cell is located at. The closer the layer is to the obstacle the grater the cost of the cell. The dimensions of the square (number of layers) have been previously established.
 
 Before assigning the cost to the cell, some conditions are checked: *that cell is not an obstacle and that cell is not the target*.
 
@@ -43,7 +43,7 @@ Before assigning the cost to the cell, some conditions are checked: *that cell i
 Once the **cost map** and the **obstacle map** are calculated the **final cost map** is obtained as the sum of both maps, so that, the cost of the cells near to the obstacles is incremented. Therefore, the **final cost map** will be the one used by the taxi to navigate.
 The navigation part follows the next structure:
 - Get the position of the car relative to the map.
-- Run through all the cells that form an aXa square around the taxi and get the coordinates relative to the map of the cell with less cost. The dimensions of the square (number of layers) have been previously established.
+- Run through all the cells that form an -aXa square around the taxi and get the coordinates relative to the map of the cell with less cost. The dimensions of the square (number of layers) have been previously established.
 - Once the cell with less cost is founded, check if the target is reached (with some tolerance) and end navigation in case it is.
 - Convert cell coordinates with minimum cost to world coordinates relative to the taxi and calculate speeds the following way:
   - **angular_speed:** is calculated as the atan2 of these coordinates.
