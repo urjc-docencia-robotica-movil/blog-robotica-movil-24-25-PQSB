@@ -23,8 +23,9 @@ This is are examples of the result (assigning 1 probability to all particles so 
 
 ### Particle propagation:
 The propagation of particles is made using the function **HAL.getOdom()**. The idea is to use the odometry to estimate the displacement that the robot has made to apply it to all particles.
-The result is obtanied from the substraction of the odometry in t minus the robot odometry in t^-1.  
-It is important to add some noise to the value obtained from that operation to prevent particles being always located in the same place.
+This is calculated by subtracting the odometry in t minus the robot odometry in t^-1 and adding some **noise** to the result. This is due to some reasons:
+- The robot movement is neither exact nor deterministic.
+- To prevent particles from staying always in the same area, which may result in the particles not being able to localise properly.
 
 ### Particle weight assingment:
 
