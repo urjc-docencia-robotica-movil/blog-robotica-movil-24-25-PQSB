@@ -43,7 +43,10 @@ For particle resampling I follow the next procedure:
 
 **Improvement:** as to normalize I have to check that the sum of the array of probabilities is not zero, in which case I re-initialise the particles, I have also added that if the sum of probabilities is too small, I also re-initialise the particles as they will be too badly located.
 
-### Optimisation techniques
+### Optimisation techniques:
+Given the high computational cost of the algorithm I have used the following techniques to reduce it:
+- **Multiprocessing:** the use of raytracing is the part with highest computational cost, so I used multiprocessing to calculate the weight of every particle. This increased a lot the frecuency the algorithm could execute at.
+- **Raytracing skip steps:** to reduce the computational cost of the raytracing part, every laser beam will just sample half of the times.
 
 ## Obtained results:
 
