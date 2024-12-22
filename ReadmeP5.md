@@ -16,7 +16,7 @@ To initialize the set of samples I follow the next procedure:
 - Assign the initial probability **1 / NPARTICLES** to every particle
 
 This is are examples of the result (assigning 1 probability to all particles so that they can be seen):
-##### 500 particles
+#### 500 particles
 ![500 particles initialization result](500particles.png)
 #### 600 particles
 ![600 particles initialization result](600particles.png)
