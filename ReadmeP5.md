@@ -74,10 +74,8 @@ The algorithm works fine to estimate the location of the real robot however, whi
 
 ## Difficulties:
 
-  - Find an appropriate formula for calculating particle weights.
+  - Finding an appropriate formula for calculating particle weights.
 
-  - 
+  - Finding the balance between adding noise and not losing too much precision: at the beginning I added very little noise so it had a very high accuracy but it did not always localise well. Therefore, I tried some noise values until I found ones that improve the localisation capability of the algorithm without losing too much accuracy.
 
-  -
-
-  -
+  - Find a way to correctly initialize randomly distributed particles evenly distributed over the free space of the map.
