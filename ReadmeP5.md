@@ -22,12 +22,17 @@ This is are examples of the result (assigning 1 probability to all particles so 
 ![600 particles initialization result](600particles.png)
 
 ### Particle propagation:
+The propagation of particles is made using the function **HAL.getOdom()**. The idea is to use the odometry to estimate the displacement that the robot has made to apply it to all particles.
+The result is obtanied from the substraction of the odometry in t minus the robot odometry in t^-1.  
+It is important to add some noise to the value obtained from that operation to prevent particles being always located in the same place.
 
 ### Particle weight assingment:
 
 ### Particle resampling:
 
-### Obtained results:
+### Optimisation techniques
+
+## Obtained results:
 The taxi is able to navigate through the map to reach the chosen target. If the target is modified during the taxi navigation to the target, the taxi stops, create a new **final cost map** and starts to navigate to the new target. The **final cost map** creating proccess cannot be interrupted.
 
 ## Difficulties:
