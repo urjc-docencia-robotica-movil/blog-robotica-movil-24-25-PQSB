@@ -24,12 +24,15 @@ This is are examples of the result (assigning 1 probability to all particles so 
 ### Particle propagation:
 The propagation of particles is made using the function **HAL.getOdom()**. The idea is to use the odometry to estimate the displacement that the robot has made to apply it to all particles.
 This is calculated by subtracting the odometry in **t** minus the robot odometry in **t^-1** and adding some **noise** to the result. This is due to some reasons:
-- The robot movement is neither exact nor deterministic.
+- To simulate an appropiate movement since the robot movement is neither exact nor deterministic.
 - To prevent particles from staying always in the same area, which may result in the particles not being able to localise properly.
 
 ### Particle weight assingment:
-For particle weight assignment, I use:
-
+For particle weight assignment, I follow the next procedure for each particle in the particles array:
+- Get the virtual laser values of the particle.
+- Calculate the difference of between the real laser and the virtual laser of that particle for **every laser beam**.
+- Calculate the mean of the square of all the differences **(MSE)**.
+- Calculate the final weight as **np.exp(-1 * square_mean_diff)**
 
 ### Particle resampling:
 
