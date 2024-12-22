@@ -28,25 +28,32 @@ This is calculated by subtracting the odometry in **t** minus the robot odometry
 - To prevent particles from staying always in the same area, which may result in the particles not being able to localise properly.
 
 ### Particle weight assingment:
-For particle weight assignment, I follow the next procedure for each particle in the particles array:
+For particle weight assignment I follow the next procedure for each particle in the particles array:
 - Get the virtual laser values of the particle.
 - Calculate the difference of between the real laser and the virtual laser of that particle for **every laser beam**.
 - Calculate the mean of the square of all the differences **(MSE)**.
 - Calculate the final weight as **np.exp(-1 * square_mean_diff)**
 
 ### Particle resampling:
+For particle resampling I follow the next procedure:
+- Create an empty array with *NPARTICLES* dimensions.
+- Creta a weight array that stores the weights of all particles.
+- Normalize the weight array.
+- Use the function **np.random.choice** with the replace option set to **TRUE** and with the weight array as reference to calculate *NPARTICLES* indexes of the array. These idexes represent the new set of particles, most of them generated near the ones who had a bigger weight in the last iteration.
+
+**Improvement:** as to normalize I have to check that the sum of the array of probabilities is not zero, in which case I re-initialise the particles, I have also added that if the sum of probabilities is too small, I also re-initialise the particles as they will be too badly located.
 
 ### Optimisation techniques
 
 ## Obtained results:
-The taxi is able to navigate through the map to reach the chosen target. If the target is modified during the taxi navigation to the target, the taxi stops, create a new **final cost map** and starts to navigate to the new target. The **final cost map** creating proccess cannot be interrupted.
+
 
 ## Difficulties:
 
-  - Find an appropiate **extra cost** for each layer of the square around the obstacle so that it is relevant but does not prevent the taxi from being able to pass through some streets in addition to determining appropiate dimensions for the square.
+  - 
 
-  - Find the dimensions of the square to expand around the taxi to get the cell with less cost.
+  - 
 
-  - Find a way to calculate angular and linear speeds so that the car moves securely.
+  -
 
-  - When the target is behind the initial position of the taxi there are some cases in which when it starts to turn around it collides with the wall. I tried to solve it by making **zero or near-zero** linear speed at **big turns (high angular speed)**. I did this by increasing the *LIMIT FACTOR*. I leave commented the previous *LIMIT FACTOR* value with which the taxi had some linear speed also in big turns.
+  -
