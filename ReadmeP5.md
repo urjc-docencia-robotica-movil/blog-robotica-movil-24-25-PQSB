@@ -8,6 +8,11 @@
 ## Algorithm details:
 The goal is to program a localisation algorithm based on the **Monte Carlo algorithm**. The developed algorithm shall estimate the position of the robot on the map.
 
+The parameters used in the algorithm are the following:
+- PARTICLES NUMBER = 600
+- LASER BEAMS NUMBER = 15
+- RAYTRACING SKIP STEPS = 2
+
 ### Particle initialization:
 To initialize the set of samples I follow the next procedure:
 - Store in a **numpy** array all the free zones indexes of the map.
@@ -44,9 +49,19 @@ For particle resampling I follow the next procedure:
 **Improvement:** as to normalize I have to check that the sum of the array of probabilities is not zero, in which case I re-initialise the particles, I have also added that if the sum of probabilities is too small, I also re-initialise the particles as they will be too badly located.
 
 ### Optimisation techniques:
-Given the high computational cost of the algorithm I have used the following techniques to reduce it:
+Before starting to implement optimisation techniques I measured the execution time of each part of the main loop obtaining the following results:
+- 
+
+
+
+Given the previous results, I used the following techniques to reduce it:
 - **Multiprocessing:** the use of raytracing is the part with highest computational cost, so I used multiprocessing to calculate the weight of every particle. This increased a lot the frecuency the algorithm could execute at.
 - **Raytracing skip steps:** to reduce the computational cost of the raytracing part, every laser beam will just sample half of the times.
+
+After applying them these are the results:
+- Bump and go + Particle propagation time: between 0.0002 and 0.005 (aprox).
+- Weight assingning (with raytracing): between 0.07 and 0.16 (aprox).
+
 
 ## Obtained results:
 
