@@ -52,7 +52,7 @@ For particle resampling I follow the next procedure:
 
 ### Optimisation techniques:
 Before starting to implement optimisation techniques I measured the execution time of each part of the main loop obtaining the following results:
-- **Particle propagation time:** between 0.00007 and 0.0001 (aprox).
+- **Circular movement + Particle propagation time:** between 0.00007 and 0.0001 (aprox).
 - **Weight assingning (with raytracing):** between 0.38 and 1.01 (aprox).
 - **Particle resampling:** between 0.0002 and 0.0015 (aprox).
 
