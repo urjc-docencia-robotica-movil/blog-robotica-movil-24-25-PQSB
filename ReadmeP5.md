@@ -70,11 +70,11 @@ There is huge improvement in the computational cost.
 ## Obtained results:
 The algorithm works fine to estimate the location of the real robot however, while testing it, I observed that in some areas of the map, the particle cloud gets a bit scattered and loses precision.
 
-**Idea for improvement:** I thoght about adding a functionality that detects when particles are misplaced and generate random particles in the free space of the map that randomly replace some particles in the current particles array. I think it would improve the ability of the particles to relocate in case they are located in the wrong area.
+**Idea for improvement:** I thoght about adding a functionality that detects when particles are misplaced and generates random particles in the free space of the map that randomly replace some particles in the current particles array. I think it would improve the ability of the particles to relocate in case they are located in the wrong area.
 
 ## Difficulties:
 
-  - 
+  - Find an appropriate formula for calculating particle weights.
 
   - 
 
