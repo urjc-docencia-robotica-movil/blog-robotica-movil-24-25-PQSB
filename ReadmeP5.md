@@ -39,6 +39,8 @@ For particle weight assignment I follow the next procedure for each particle in 
 - Calculate the mean of the square of all the differences **(MSE)**.
 - Calculate the final weight as **np.exp(-1 * square_mean_diff)**
 
+**Improvement:** before assigning the weight to the particle I check if the particle is in an obstacle or out of the map boundaries in which case I give zero probability without raytracing that particle.
+
 ### Particle resampling:
 For particle resampling I follow the next procedure:
 - Create an empty array with *NPARTICLES* dimensions.
