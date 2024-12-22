@@ -10,9 +10,13 @@ The goal is to program a localisation algorithm based on the **Monte Carlo algor
 To initialize the set of samples I follow the next procedure:
 - Store in a **numpy** array all the free zones indexes of the map.
 - Randomly choose *NPARTICLES* indexes of that array.
-- For *NPARTICLES* to create, create a particle with the coordinates stored in that index of the array but in world coordinates format and add to the particle a randomly chosen orientation between 0 and 2pi. 
+- For *NPARTICLES* to create, create a particle with the coordinates stored in that index of the array but in world coordinates format and add to the particle a randomly chosen orientation between 0 and 2pi.
+- Assign the initial probability **1 / NPARTICLES** to every particle
 
-This is an example of the result:
+This is are examples of the result (assigning 1 probability to all particles so that they can be seen):
+### 500 particles
+
+### 600 particles
 
 
 ### Particle propagation:
