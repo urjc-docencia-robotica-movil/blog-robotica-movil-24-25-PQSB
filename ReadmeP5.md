@@ -39,7 +39,7 @@ For particle weight assignment I follow the next procedure for each particle in 
 - Calculate the mean of the square of all the differences **(MSE)**.
 - Calculate the final weight as **np.exp(-1 * square_mean_diff)**
 
-**Improvement:** before assigning the weight to the particle I check if the particle is in an obstacle or out of the map boundaries in which case I give zero probability without raytracing that particle.
+**Improvement:** before assigning the weight to the particle I check if the particle is in an obstacle or out of the map boundaries in which case I give **zero probability** without raytracing that particle.
 
 ### Particle resampling:
 For particle resampling I follow the next procedure:
@@ -52,15 +52,15 @@ For particle resampling I follow the next procedure:
 
 ### Optimisation techniques:
 Before starting to implement optimisation techniques I measured the execution time of each part of the main loop obtaining the following results:
-- **Bump and go + Particle propagation time:** between 0.0002 and 0.005 (aprox).
-- **Weight assingning (with raytracing):** between 0.07 and 0.16 (aprox).
-- **Particle resampling:** between 0.0005 and 0.0019 (aprox).
+- **Particle propagation time:** between 0.00007 and 0.0001 (aprox).
+- **Weight assingning (with raytracing):** between 0.38 and 1.01 (aprox).
+- **Particle resampling:** between 0.0002 and 0.0015 (aprox).
 
 Given the previous results, I used the following techniques to reduce it:
 - **Multiprocessing:** the use of raytracing is the part with highest computational cost, so I used multiprocessing to calculate the weight of every particle. This increased a lot the frecuency the algorithm could execute at.
 - **Raytracing skip steps:** to reduce the computational cost of the raytracing part, every laser beam will just sample half of the times.
 
-After applying them these are the results:
+After applying them and under the same conditions, these are the results:
 - **Bump and go + Particle propagation time:** between 0.0002 and 0.005 (aprox).
 - **Weight assingning (with raytracing):** between 0.07 and 0.16 (aprox).
 - **Particle resampling:** between 0.0005 and 0.0019 (aprox).
